@@ -3,6 +3,7 @@ const { v4: uuidv4 } = require('uuid');
 const path = require('path');
 const fs = require('fs');
 const { restart } = require('nodemon');
+const db = require("../db/db.json");
 
 // get route to retrieve all notes
 router.get('/notes', (req, res) => {
@@ -29,7 +30,7 @@ router.get('/notes/:id', (req, res) => {
 })
 
 // post route for new note
-router.post('/', (req, res) => {
+router.post('/notes', (req, res) => {
     console.log(req.body);
     const { title, text } = req.body;
 
@@ -41,21 +42,15 @@ router.post('/', (req, res) => {
         };
 
         //fs append new note to db.json
-        fs.readFileSync(path.join(__dirname, '../db/db.json'), 'utf8', (err, data) => {
-            if (err) {
-                console.error(err);
-            } else {
-                const parsedData = JSON.parse(data);
-                parsedData.push(newNote);
-                fs.writeFileSync(path.join(__dirname, '../db/db.json', JSON.stringify(parsedData)));
-            }
-        });
-        res.json('Note added successfully');
+        db.push(newNote);
+        console.log(db)
+        fs.writeFileSync(path.join(__dirname, '../db/db.json'), JSON.stringify(db));
+        res.sendStatus(200);
         
     } else {
         res.error('Error in adding new note');
     }
-})
+});
 
 
 // delete route for specific note
