@@ -46,7 +46,7 @@ router.post('/', (req, res) => {
                 console.error(err);
             } else {
                 const parsedData = JSON.parse(data);
-                parsedData.push(content);
+                parsedData.push(newNote);
                 fs.writeFileSync(path.join(__dirname, '../db/db.json', JSON.stringify(parsedData)));
             }
         });
