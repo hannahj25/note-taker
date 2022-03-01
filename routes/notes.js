@@ -15,24 +15,25 @@ router.get('/notes', (req, res) => {
   });
 
 // get route to retrieve specific note by id
-router.get('/notes/:id', (req, res) => {
-    const id = req.params.id;
-    // read dbjson
-    const notes = JSON.parse(fs.readFileSync(path.join(__dirname, '../db/db.json'), 'utf8'));
-    // find note from dbjson by id
-    const found = notes.find(note => note.id === id);
-    // if found send back json
-    if (found !== undefined) {
-        res.json(found);
-    } else {
-        res.status(404).json({error: "Note not found"})
-    }
-})
+// router.get('/notes/:id', (req, res) => {
+//     const id = req.params.id;
+//     // read dbjson
+//     const notes = JSON.parse(fs.readFileSync(path.join(__dirname, '../db/db.json'), 'utf8'));
+//     // find note from dbjson by id
+//     const found = notes.find(note => note.id === id);
+//     // if found send back json
+//     if (found !== undefined) {
+//         res.json(found);
+//     } else {
+//         res.status(404).json({error: "Note not found"})
+//     }
+// })
 
 // post route for new note
 router.post('/notes', (req, res) => {
     console.log(req.body);
     const { title, text } = req.body;
+    let notes = JSON.parse(fs.readFileSync('./db/db.json'))
 
     if (req.body) {
         const newNote = {
@@ -42,9 +43,9 @@ router.post('/notes', (req, res) => {
         };
 
         //fs append new note to db.json
-        db.push(newNote);
-        console.log(db)
-        fs.writeFileSync(path.join(__dirname, '../db/db.json'), JSON.stringify(db));
+        
+        notes.push(newNote);
+        fs.writeFileSync(path.join(__dirname, '../db/db.json'), JSON.stringify(notes));
         res.sendStatus(200);
         
     } else {

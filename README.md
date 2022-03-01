@@ -12,6 +12,8 @@
 
 - [Built With](#built-with)
 
+- [Future Considerations](#future-considerations)
+
 - [License](#license)
 
 - [Contact](#contact)
@@ -38,6 +40,9 @@ JavaScript
 Node.js
 
 Express.js
+
+## Future Considerations
+Add ability to edit saved notes with put route.
 
 ## License
 This project is covered under the MIT license.
