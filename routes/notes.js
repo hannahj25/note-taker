@@ -54,6 +54,14 @@ router.post('/notes', (req, res) => {
 
 
 // delete route for specific note
+router.delete('/notes/:id', (req, res) => {
+    const id = req.params.id;
+    const notes = JSON.parse(fs.readFileSync(path.join(__dirname, '../db/db.json'), 'utf8'))
+    const result = notes.filter((note) => note.id !== id);
+    fs.writeFileSync(path.join(__dirname, '../db/db.json'), JSON.stringify(result));
+    res.json(`Note ${id} has been deleted.`);
+    
 
+});
 
   module.exports = router;
