@@ -10,7 +10,7 @@
 
 - [Link](#link)
 
-l [Built With](#built-with)
+- [Built With](#built-with)
 
 - [License](#license)
 
@@ -19,6 +19,7 @@ l [Built With](#built-with)
 - [Acknowledgements](#acknowledgements)
 
 ## Description
+Note-taking app built with Express.js which allows user to write notes and save them. Previously saved notes can be viewed and deleted. 
 
 ## Screenshots
 
@@ -26,8 +27,30 @@ l [Built With](#built-with)
 
 ## Built With
 
+HTML
+
+CSS
+
+Bootstrap
+
+JavaScript
+
+Node.js
+
+Express.js
+
 ## License
+This project is covered under the MIT license.
+
+For more information see: 
+https://opensource.org/licenses/MIT
 
 ## Contact
+You can direct any questions or feedback you have about the app to:
+
+Email: peterson.hj@outlook.com
+
+GitHub: https://github.com/hannahj25
 
 ## Acknowledgements
+App is built off of starter code provided by the University of Adelaide's Coding Boot Camp. 
