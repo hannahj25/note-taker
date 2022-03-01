@@ -24,8 +24,17 @@
 Note-taking app built with Express.js which allows user to write notes and save them. Previously saved notes can be viewed and deleted. 
 
 ## Screenshots
+Homepage
+![screenshot-homepage](./assets/screenshot-homepage.png)
+
+Saved notes displayed on the left; field to write new note/view previous note on right.
+![screenshot-sample-notes](./assets/screenshot-sample-notes.png)
+
+404 page displayed when invalid url typed.
+![screenshot-404-page](./assets/screenshot-404-page.png)
 
 ## Link
+https://express-note-taker-h.herokuapp.com/
 
 ## Built With
 
