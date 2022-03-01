@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
 const path = require('path');
 const fs = require('fs');
-const { restart } = require('nodemon');
 const db = require("../db/db.json");
 
 // get route to retrieve all notes
